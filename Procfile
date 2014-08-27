@@ -1,1 +1,1 @@
-web: node ssrbot.js
+web: node server.js

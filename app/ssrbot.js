@@ -1,5 +1,3 @@
-var irc = require('irc');
-
 var config = {
   server: 'irc.freenode.net',
   botName: 'MonsterBot',
