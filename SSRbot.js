@@ -7,17 +7,23 @@ var config = {
 };
 
 var bot = new irc.Client(config.server, config.botName, {
-  channels: config.channels
+  channels: config.channels,
+  autoConnect: true
 });
 
-bot.on('join', function (channel, nick) {
-    return bot.say(channel, 'Here I am!');
+// Bot sends a welcome message to room entrants
+bot.on("join", function(channel, who) {
+  bot.say(channel, who + ", welcome to the SuperSecretRoom!");
 });
 
+// Log all public messages to console
 bot.on('message', function(from, to, message) {
-  console.log('%s said %s to %s', from, message, to);
+  console.log(from + ' said ' + message + ' to ' + to);
+});
 
-    if(message.indexOf('hello') > -1) {
-        bot.say(to, 'Hi there!');
-    }
+// Bot responds when trigger word is used in IRC chat
+bot.on('message', function(from, to, message) {
+  if(message.indexOf('vacation') > -1) {
+    bot.say(to, 'Oooooo, I want to go on a vacation!');
+  }
 });
