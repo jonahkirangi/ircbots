@@ -1,0 +1,27 @@
+{
+  "name": "ircbot-using-node",
+  "version": "0.1.0",
+  "description": "Node-based IRC bot",
+  "main": "ssrbot.js",
+  "scripts": {
+    "start": "node ssrbot.js"
+  },
+  "dependencies": {
+    "express": "~3.4.x"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonahkirangi/ircbots"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express",
+    "bot"
+  ],
+  "author": "Jonah Kirangi",
+  "license": "MIT"
+}
