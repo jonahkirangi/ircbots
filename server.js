@@ -1,12 +1,7 @@
 var irc = require('irc');
 var express = require('express');
+var config = require('./config.js');
 var app = express();
-
-var config = {
-  server: 'irc.freenode.net',
-  botName: 'MonsterBot',
-  channels: ['#supersecretroom']
-};
 
 var bot = new irc.Client(config.server, config.botName, {
   channels: config.channels,
