@@ -23,6 +23,12 @@ bot.on('message', function(from, to, message) {
   if(message.indexOf('vacation') > -1) {
     bot.say(to, 'Oooooo, I want to go on a vacation!');
   }
+  if(message.indexOf('rain') > -1) {
+    bot.say(to, 'Blech...');
+  }
+  if(message.indexOf('tired') > -1) {
+    bot.say(to, 'Hey, ' + from + '! Wake up!');
+  }
 });
 
 app.set('port', (process.env.PORT || 3000));
