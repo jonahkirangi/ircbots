@@ -3,6 +3,8 @@ var express = require('express');
 var config = require('./config.js');
 var app = express();
 
+app.use(express.static(__dirname));
+
 var bot = new irc.Client(config.server, config.botName, {
   channels: config.channels,
   autoConnect: true
