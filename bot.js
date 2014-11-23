@@ -1,9 +1,5 @@
 var irc = require('irc');
-var express = require('express');
 var config = require('./config.js');
-var app = express();
-
-app.use(express.static(__dirname));
 
 var bot = new irc.Client(config.server, config.botName, {
   channels: config.channels,
@@ -31,10 +27,4 @@ bot.on('message', function(from, to, message) {
   if(message.indexOf('tired') > -1) {
     bot.say(to, 'Hey, ' + from + '! Wake up!');
   }
-});
-
-app.set('port', (process.env.PORT || 3000));
-
-app.listen(app.get('port'), function() {
-  console.log('IRC bot running on port ' + app.get('port'));
 });
